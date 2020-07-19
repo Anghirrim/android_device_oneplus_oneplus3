@@ -89,16 +89,7 @@ public class VibratorStrengthPreference extends SeekBarDialogPreference implemen
     private void setValue(String newValue) {
         Utils.writeValue(FILE_LEVEL, newValue);
     }
-
-    public static void restore(Context context) {
-        if (!isSupported()) {
-            return;
-        }
-
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.KEY_VIBSTRENGTH, "2700"); 
-        Utils.writeValue(FILE_LEVEL, storedValue);
-    }
-
+    
     public void onProgressChanged(SeekBar seekBar, int progress,
             boolean fromTouch) {
         setValue(String.valueOf(progress + mMinValue));
