@@ -167,17 +167,7 @@ public class GestureSettings extends PreferenceActivity implements
         }
         return super.onOptionsItemSelected(item);
     }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mProxiSwitch) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.DEVICE_PROXI_CHECK_ENABLED, mProxiSwitch.isChecked() ? 1 : 0);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
+    
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mDoubleSwipeApp) {
