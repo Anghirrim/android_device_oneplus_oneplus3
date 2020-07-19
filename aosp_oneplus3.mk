@@ -20,6 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oneplus3 device
 $(call inherit-product, device/oneplus/oneplus3/device.mk)
 
+# Boot animation res
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Inherit some common AEX stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
