@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oneplus3 device
 $(call inherit-product, device/oneplus/oneplus3/device.mk)
 
-# Inherit some common Nitrogen stuff.
+# Inherit some common AEX stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
 PRODUCT_NAME := aosp_oneplus3
