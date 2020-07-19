@@ -90,23 +90,9 @@ public class Startup extends BroadcastReceiver {
         value = Settings.System.getString(context.getContentResolver(), GestureSettings.DEVICE_GESTURE_MAPPING_9);
         enabled = !TextUtils.isEmpty(value) && !value.equals(AppSelectListPreference.DISABLED_ENTRY);
         restore(getGestureFile(GestureSettings.KEY_RIGHT_SWIPE_APP), enabled);
-
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_SRGB_SWITCH, false);
-        restore(SRGBModeSwitch.getFile(), enabled);
-
+        
         enabled = sharedPrefs.getBoolean(GestureSettings.KEY_TAPTOWAKE_SWITCH, false);
         restore(TapToWakeSwitch.getFile(), enabled);
-
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_SWAPKEYS_SWITCH, true);
-        restore(SwapHwKeysSwitch.getFile(), enabled);
-
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_HBM_SWITCH, false);
-        if (enabled) {
-            restore(HBMModeSwitch.getFile(), "2");
-        }
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_DCI_SWITCH, false);
-        restore(DCIModeSwitch.getFile(), enabled);
 
         VibratorStrengthPreference.restore(context);
     }
