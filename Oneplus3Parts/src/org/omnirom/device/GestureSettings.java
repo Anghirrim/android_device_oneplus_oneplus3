@@ -90,10 +90,6 @@ public class GestureSettings extends PreferenceActivity implements
         lv.setDivider(new ColorDrawable(Color.TRANSPARENT));
         lv.setDividerHeight(0);
 
-        mProxiSwitch = (TwoStatePreference) findPreference(KEY_PROXI_SWITCH);
-        mProxiSwitch.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.DEVICE_PROXI_CHECK_ENABLED, 1) != 0);
-
         mTapToWakeSwitch = (TwoStatePreference) findPreference(KEY_TAPTOWAKE_SWITCH);
         mTapToWakeSwitch.setEnabled(TapToWakeSwitch.isSupported());
         mTapToWakeSwitch.setChecked(TapToWakeSwitch.isCurrentlyEnabled(this));
